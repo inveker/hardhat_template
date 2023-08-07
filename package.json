@@ -4,7 +4,9 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "test": "hardhat test --full-trace"
+    "test": "hardhat test --full-trace",
+    "node": "hardhat node --full-trace",
+    "deploy": "hardhat node --full-trace --network hardhat"
   },
   "author": "",
   "license": "ISC",

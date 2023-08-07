@@ -3,11 +3,11 @@ pragma solidity 0.8.18;
 
 import { OwnableUpgradeable } from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import { UUPSUpgradeable } from "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+import { IPricer } from "./interfaces/IPricer.sol";
 
-contract Pricer is UUPSUpgradeable, OwnableUpgradeable {
+contract Pricer is IPricer, UUPSUpgradeable, OwnableUpgradeable {
     int256 public currentPrice;
 
-    event SetPrice(int256 oldPrice, int256 newPrice);
 
     function _authorizeUpgrade(address) internal view override {
         _checkOwner();
